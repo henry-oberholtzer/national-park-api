@@ -1,6 +1,12 @@
 import * as c from '../actions/ActionTypes';
 
-const getParksReducer = (state, action) => {
+export const initialState = {
+    isLoaded: false,
+    parkList: [],
+    error: null,
+}
+
+const getParksReducer = (state<typeof initialState>, action) => {
     switch (action.type) {
         case c.GET_PARKS_SUCCESS:
             return {

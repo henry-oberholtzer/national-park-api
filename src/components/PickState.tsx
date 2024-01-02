@@ -1,5 +1,4 @@
 import { useState } from "react";
-import PropTypes from 'prop-types';
 
 const stateCodes: StateCode = {
     AL: "Alabama",
@@ -83,10 +82,5 @@ function PickState (props: PickState) {
         </>
     )
 }
-
-PickState.propTypes = {
-    parksByStateAPICall: PropTypes.func,
-}
-
 
 export default PickState;

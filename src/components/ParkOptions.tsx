@@ -1,16 +1,25 @@
-function ParkOptions() {
+
+function ParkOptions(props) {
     //make each li item clickable.
+    const { parkList } = props;
     return (
         <>
-        <h2>Here are the 3 closest parks to you</h2>
+        {parkList.length ? 
+        <h2>Here are the {parkList.length} parks in your chosen state</h2> : <></>
+        }
         <ul>
-            <li>one park</li>
-            <li>two park</li>
-            <li>three park</li>
+            {parkList.map((park, index: number) =>
+                <li key={index}>
+                    <h3>{park.name}</h3>
+                    <p>{park.description}</p>
+                    {park.images.length !== 0 ?                     
+                    <img width="100px" src={park.images[0].url} alt={park.images[0].altText}/>
+                    : ''}
+                </li>
+            )}
         </ul>
-
-
         </>
-    )
+    );
+            
 }
 export default ParkOptions;
