@@ -1,12 +1,14 @@
 import ParkOptions from "./ParkOptions";
-import ZipForm from "./ZipForm";
+import PickState from "./PickState";
+import { apiCall } from "../nps-api-call";
 
 function FindPark() {
     return (
         <>
         <p>this is the findpark control comp</p>
         <hr />
-        <ZipForm />
+        <PickState 
+            parksByStateAPICall={apiCall}/>
         <ParkOptions />
         <hr />
         <p>user choices generate here:</p>

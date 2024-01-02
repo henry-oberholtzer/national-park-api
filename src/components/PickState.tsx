@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { apiCall } from "../nps-api-call";
+import PropTypes from 'prop-types';
 
 const stateCodes: StateCode = {
     AL: "Alabama",
@@ -57,18 +57,14 @@ const stateCodes: StateCode = {
     WY: "Wyoming"
 };
 
-const handleFormSubmit = (selectedState: string) => {
-    apiCall(selectedState)
-}
-
-function PickState() {
+function PickState (props: PickState) {
     const [selectedState, setSelectedState] = useState<string>("AL")
     return (
         <>
         <p>Choose a state to find National Parks near you.</p>
         <form onSubmit={(e) => {
             e.preventDefault();
-            handleFormSubmit(selectedState)
+            props.parksByStateAPICall(selectedState)
         }}>
             <select
                 id="states"
@@ -88,6 +84,9 @@ function PickState() {
     )
 }
 
+PickState.propTypes = {
+    parksByStateAPICall: PropTypes.func,
+}
 
 
 export default PickState;
