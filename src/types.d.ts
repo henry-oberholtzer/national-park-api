@@ -1,0 +1,1 @@
+type StateCode = { [index: string]: string }

@@ -1,13 +1,93 @@
-function ZipForm() {
+import { useState } from "react";
+import { apiCall } from "../nps-api-call";
+
+const stateCodes: StateCode = {
+    AL: "Alabama",
+    AK: "Alaska",
+    AZ: "Arizona",
+    AR: "Arkansas",
+    CA: "California",
+    CO: "Colorado",
+    CT: "Connecticut",
+    DE: "Delaware",
+    DC: "District of Columbia",
+    FL: "Florida",
+    GA: "Georgia",
+    HI: "Hawaii",
+    ID: "Idaho",
+    IL: "Illinois",
+    IN: "Indiana",
+    IA: "Iowa",
+    KS: "Kansas",
+    KY: "Kentucky",
+    LA: "Louisiana",
+    ME: "Maine",
+    MD: "Maryland",
+    MA: "Massachusetts",
+    MI: "Michigan",
+    MN: "Minnesota",
+    MS: "Mississippi",
+    MO: "Missouri",
+    MT: "Montana",
+    NE: "Nebraska",
+    NV: "Nevada",
+    NH: "New Hampshire",
+    NJ: "New Jersey",
+    NM: "New Mexico",
+    NY: "New York",
+    NC: "North Carolina",
+    ND: "North Dakota",
+    OH: "Ohio",
+    OK: "Oklahoma",
+    OR: "Oregon",
+    PA: "Pennsylvania",
+    PR: "Puerto Rico",
+    RI: "Rhode Island",
+    SC: "South Carolina",
+    SD: "South Dakota",
+    TN: "Tennessee",
+    TX: "Texas",
+    UT: "Utah",
+    VT: "Vermont",
+    VA: "Virginia",
+    VI: "Virgin Islands",
+    WA: "Washington",
+    WV: "West Virginia",
+    WI: "Wisconsin",
+    WY: "Wyoming"
+};
+
+const handleFormSubmit = (selectedState: string) => {
+    apiCall(selectedState)
+}
+
+function PickState() {
+    const [selectedState, setSelectedState] = useState<string>("AL")
     return (
         <>
-        <p>Please enter your zip code to find the National Park nearest you.</p>
-        <form>
-            <input type="text" placeholder="90210" />
-            <button type="submit">Let's go!</button>
+        <p>Choose a state to find National Parks near you.</p>
+        <form onSubmit={(e) => {
+            e.preventDefault();
+            handleFormSubmit(selectedState)
+        }}>
+            <select
+                id="states"
+                onChange={(e) => setSelectedState(e.currentTarget.value)}>
+                {Object.keys(stateCodes).map(key => {
+                    return (
+                        <option value={key} key={key}>{stateCodes[key]}</option>
+                    )
+                })}
+            </select>
+            <button
+                type="submit"
+                >Let's go!</button>
         </form>
         <hr />
         </>
     )
 }
-export default ZipForm;
+
+
+
+export default PickState;
