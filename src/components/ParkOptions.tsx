@@ -1,27 +1,28 @@
 import { stateCodes } from "../stateCodes";
-import { ParkOptionsProps } from "../types";
+import { parkArray } from "../types";
 import Park from "./Park";
 import './css/ParkOptions.css'
+import { useLoaderData } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-function ParkOptions(props: ParkOptionsProps) {
-    const { parkList, chosenState } = props;
+function ParkOptions() {
+    const parkList = useLoaderData() as parkArray;
+    const { stateCode } = useParams();
+    console.log(parkList);
     return (
-        <>
-        {parkList.length ? 
-        <h2>Here are the {parkList.length} parks in {stateCodes[chosenState]}</h2> : <></>
-        }
-        <div className="results">
-            {parkList.map((park, index: number) =>
-                <Park
-                    key={index}
-                    park={park}
-                    index={index}
-                    handleThings={props.thingsToDoAPICall}
-                />
-            )}
-        </div>
-        </>
-    );
+            <>
+            <p>Found {parkList.length} {parkList.length > 1 ? "results" : "result"} {stateCode ? `for ${stateCodes[stateCode]}` : "for this query"}</p>
+            <div className="results">
+                {parkList.map((park, index: number) =>
+                    <Park
+                        key={index}
+                        park={park}
+                        index={index}
+                    />
+                )}
+            </div> 
+            </>
+    )
             
 }
 export default ParkOptions;

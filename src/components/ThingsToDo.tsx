@@ -1,12 +1,13 @@
-import { ThingsProps } from "../types";
 import Things from "./Things";
+import { useLoaderData, useParams } from "react-router-dom";
+import { thingsArray } from "../types";
 
-function ThingsToDo(props: ThingsProps) {
-    const { thingsToDo } = props;
+function ThingsToDo() {
+    const thingsToDo = useLoaderData() as thingsArray;
     return(
         <>
         {thingsToDo.length ? 
-        <h2>Here are things to do in *parkCode*</h2> : <h2>Sorry, there's nothing to do here</h2>
+        <h2>Here are some things to do: </h2> : <h2>Sorry, there's nothing to do here</h2>
         }
         <div className="toDo">
             {thingsToDo.map((thing, index: number) =>

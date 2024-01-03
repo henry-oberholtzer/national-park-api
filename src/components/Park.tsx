@@ -1,8 +1,12 @@
 import './css/Park.css'
 import { ParkProps } from '../types'
+import { useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 const Park = (props: ParkProps) => {
-    const { park, index, handleThings } = props
+    const { park, index } = props
+    const nav = useNavigate()
+    const { stateCode } = useParams();
 
     return (
         <div className="park" key={index}>
@@ -12,8 +16,8 @@ const Park = (props: ParkProps) => {
             <div>
                 <div>
                 <h3>{park.fullName}</h3>
-                <button onClick={() => handleThings(park.parkCode)}>Things to do</button>
-            <button>Find a campground</button>
+                <button onClick={() => nav(`/state/${stateCode}/park/${park.parkCode}`)}>Things to do</button>
+                <button onClick={() => nav(`${park.parkCode}/campgrounds`)}>Find a campground</button>
             </div>
                 <p className="desc">{park.description}</p>
             </div>

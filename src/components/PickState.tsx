@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { stateCodes } from "../stateCodes";
+import { useNavigate } from "react-router-dom";
 
 
-function PickState (props: PickState) {
+function PickState () {
     const [selectedState, setSelectedState] = useState<string>("AL")
+    const navigate = useNavigate();
     return (
         <>
         <p>Choose a state to find National Parks near you.</p>
         <form onSubmit={(e) => {
             e.preventDefault();
-            props.parksByStateAPICall(selectedState)
-            props.setChosenState(selectedState);
-
+            navigate(`/state/${selectedState}`)
         }}>
             <select
                 id="states"
