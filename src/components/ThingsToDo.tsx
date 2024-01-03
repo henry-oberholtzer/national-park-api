@@ -9,7 +9,7 @@ function ThingsToDo() {
         {thingsToDo.length ? 
         <h2>Here are some things to do: </h2> : <h2>Sorry, there's nothing to do here</h2>
         }
-        <div className="toDo">
+       <div className="toDo">
             {thingsToDo.map((thing, index: number) =>
                 <Things
                     key={index}
@@ -17,7 +17,7 @@ function ThingsToDo() {
                     index={index}
                 />
             )}
-        </div>
+        </div> 
         </>
     )
 }

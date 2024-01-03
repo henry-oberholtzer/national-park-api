@@ -16,8 +16,8 @@ const Park = (props: ParkProps) => {
             <div>
                 <div>
                 <h3>{park.fullName}</h3>
-                <button onClick={() => nav(`/state/${stateCode}/park/${park.parkCode}`)}>Things to do</button>
-                <button onClick={() => nav(`${park.parkCode}/campgrounds`)}>Find a campground</button>
+                <button onClick={() => nav(`/state/${stateCode}/park/${park.parkCode}/thingstodo`)}>Things to do</button>
+                <button onClick={() => nav(`/state/${stateCode}/park/${park.parkCode}/campgrounds`)}>Find a campground</button>
             </div>
                 <p className="desc">{park.description}</p>
             </div>

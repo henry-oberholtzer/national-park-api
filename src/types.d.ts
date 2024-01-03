@@ -1,4 +1,4 @@
-import { parkData, thingsData } from "./stateCodes";
+import { parkData, thingsData, campgroundData } from "./stateCodes";
 
 type StateCode = { [index: string]: string }
 
@@ -9,6 +9,9 @@ type ParkProps = {
 
 type parkArray = [typeof parkData];
 type thingsArray = [typeof thingsData];
+type CampgroundData = typeof campgroundData;
+type CampgroundDataArray = [CampgroundData];
+
 type ParkOptionsProps = {
     parkList: [typeof parkData]
     isLoaded: boolean
@@ -19,4 +22,8 @@ type FailureAction = (error: string) => object;
 type ThingProps = {
     thing: typeof thingsData
     index: number;
+}
+type CampProps = {
+    camp: CampgroundData,
+    index: number,
 }

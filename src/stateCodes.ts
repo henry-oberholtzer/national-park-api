@@ -334,3 +334,143 @@ export const thingsData =
         "winter recreation"
     ]
 }
+
+export const campgroundData = {
+    "accessibility": [
+        {
+            "wheelchairaccess": "Some restrooms are wheelchair accessible. The campground is mainly accessed by transit bus, around half of which are wheelchair accessible.",
+            "internetinfo": "",
+            "rvallowed": 0,
+            "cellphoneinfo": "",
+            "firestovepolicy": "Open fires are prohibited at Wonder Lake Campground. Bring a camping stove of some kind to cook your meals.",
+            "rvmaxlength": 0,
+            "additionalinfo": "",
+            "trailermaxlength": 0,
+            "adainfo": "Paths between campsites vary from compact gravel to muddy, rocky surfaces. The campground is laid out with some sites on a small hill above the level of the main campground road, while others are level with or slightly downhill from the level of the road.",
+            "rvinfo": "This is a tent-only campsite—RVs and trailers are prohibited at Wonder Lake.",
+            "accessroads": [
+                "Unpaved Roads - 4WD/High clearance required"
+            ],
+            "trailerallowed": 0,
+            "classifications": [
+                "Limited Development Campground"
+            ]
+        }
+    ],
+    "addresses": [
+        {
+            "postalCode": 99755,
+            "city": "Denali Park",
+            "stateCode": "AK",
+            "countryCode": "US",
+            "provinceTerritoryCode": "",
+            "line1": "PO Box 9",
+            "line2": "",
+            "line3": "",
+            "type": "Mailing"
+        },
+        {
+            "postalCode": 99755,
+            "city": "Denali Park",
+            "stateCode": "AK",
+            "countryCode": "US",
+            "provinceTerritoryCode": "",
+            "line1": "Mile 85, Denali Park Road",
+            "line2": "",
+            "line3": "",
+            "type": "Physical"
+        }
+    ],
+    "amenities": [
+        {
+            "trashrecyclingcollection": "Yes - seasonal",
+            "toilets": [
+                "Vault Toilets - year round"
+            ],
+            "internetconnectivity": false,
+            "showers": [
+                "None"
+            ],
+            "cellphonereception": false,
+            "laundry": false,
+            "amphitheater": "",
+            "dumpstation": false,
+            "campstore": false,
+            "stafforvolunteerhostonsite": "Yes - seasonal",
+            "potablewater": [
+                "Yes - seasonal"
+            ],
+            "iceavailableforsale": false,
+            "firewoodforsale": false,
+            "ampitheater": "Yes - year round",
+            "foodstoragelockers": "Yes - year round"
+        }
+    ],
+    "campsites":
+        {
+            "other": 0,
+            "group": 0,
+            "horse": 0,
+            "totalSites": 28,
+            "tentonly": 28,
+            "electricalhookups": 0,
+            "rvonly": 0,
+            "walkboatto": 0
+        },
+    "contacts": [
+        {
+            "phoneNumbers": [
+                {
+                    "phoneNumber": "9076839532",
+                    "description": "",
+                    "extension": "",
+                    "type": "Voice"
+                }
+            ]
+        },
+        {
+            "emailAddresses": [
+                {
+                    "emailAddress": "yell_visitor_services@nps.gov",
+                    "description": ""
+                }
+            ]
+        }
+    ],
+    "description": "Wonder Lake Campground is at mile 85 on the Denali Park Road. It offers 28 sites, which are all tent-only.\n\nIt is the closest campground to Denali. Though separated by nearly 26 miles, the sheer size of the mountain makes it loom impressively over Wonder Lake Campground. Cloudy skies can obscure views, and mosquitoes can be fierce, but Wonder Lake on a clear day offers views that will last a lifetime. Bear-proof food lockers are available throughout the campground.",
+    "directionsoverview": "Visitors may not drive to this campground. It is only accessible for campers via specialized park buses. Be sure to book a camper bus ticket in addition to paying your campground fees.",
+    "directionsUrl": "http://www.nps.gov/dena/planyourvisit/campground-wonder.htm",
+    "fees": null,
+    "geometryPoiId": "8793be28-0d54-493f-8556-877e7ecbe937",
+    "id": 29,
+    "images": [{
+        altText: "hey",
+        caption: "hey",
+        credit: "hey",
+        crops: [],
+        title: "hey",
+        url: "hey"
+    }],
+    "latLong": "{lat:63.4574408, lng:-150.8612003}",
+    "latitude": "63.4574408",
+    "longitude": "-150.8612003",
+    "multimedia": [
+        {
+            "title": "The Worthington Farm",
+            "id": "4FD5B472-D6D9-43AA-9532-2AC5BF920883",
+            "type": "multimedia/videos",
+            "url": "https://www.nps.gov/media/video/view.htm?id=4FD5B472-D6D9-43AA-9532-2AC5BF920883"
+        }
+    ],
+    "name": "Wonder Lake",
+    "operatingHours": null,
+    "parkCode": "dena",
+    "regulationsoverview": null,
+    "regulationsurl": "http://www.nps.gov/dena/learn/management/lawsandpolicies.htm",
+    "relevanceScore": 1,
+    "reservationsdescription": "",
+    "reservationsitesfirstcome": "",
+    "reservationssitesreservable": "",
+    "reservationsurl": "",
+    "weatheroverview": "Wonder Lake tends to be cooler and wetter than the park entrance. Expect lows in the upper 30s or 40s each night. Daytime highs are typically in the upper 50s or 60s, though occasional sunny days can result in temps near 80. Mosquitoes are particularly bad most of the summer - bring a headnet!"
+}
