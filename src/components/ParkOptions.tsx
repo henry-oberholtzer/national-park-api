@@ -1,23 +1,25 @@
+import { stateCodes } from "../stateCodes";
+import { ParkOptionsProps } from "../types";
+import Park from "./Park";
+import './css/ParkOptions.css'
 
-function ParkOptions(props) {
-    //make each li item clickable.
-    const { parkList } = props;
+function ParkOptions(props: ParkOptionsProps) {
+    const { parkList, chosenState } = props;
     return (
         <>
         {parkList.length ? 
-        <h2>Here are the {parkList.length} parks in your chosen state</h2> : <></>
+        <h2>Here are the {parkList.length} parks in {stateCodes[chosenState]}</h2> : <></>
         }
-        <ul>
+        <div className="results">
             {parkList.map((park, index: number) =>
-                <li key={index}>
-                    <h3>{park.name}</h3>
-                    <p>{park.description}</p>
-                    {park.images.length !== 0 ?                     
-                    <img width="100px" src={park.images[0].url} alt={park.images[0].altText}/>
-                    : ''}
-                </li>
+                <Park
+                    key={index}
+                    park={park}
+                    index={index}
+                    handleThings={props.thingsToDoAPICall}
+                />
             )}
-        </ul>
+        </div>
         </>
     );
             

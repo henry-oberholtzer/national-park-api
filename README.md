@@ -4,22 +4,22 @@
 
 _A pair project for Epicodus using React, Vite, Typescript, API calls_
 
+![component diagram](src/assets/component.diagram.drawio.svg)
+
 * Notes for development
 
 Goal:
-Make API call to NPS API
-User: keyword search by zip
-/parks to do keywork search query to find park near entered zipcode (might need a zip api?)
-User: choose one park from list of 3
-/thingstodo API call to generate list of activities at said park
-(? if pick things to do--checklist? show campground with closest location to chosen thingstodo)
-/campground API call to generate campground (maybe sort by size, amenity, etc)
+
+/things to do: add funcitonality to button to add item to itinerary component
+
+/campground API call (from park options comp. btn) to generate campground (maybe sort by size, amenity, etc)
 *link to book campground (automate?)
 
 *if user chooses activity/park, saved to local storage (eventually database) - user dashboard
 
-visuals: from /parks img, /thingstodo img, /campground img.  (?webcam api if doable.)
+* add React Router to navigate from home page, parklist, campground, todolist, userdashboard (w saved stuff)
 
+?add webcam call?
 
 Components:
 
