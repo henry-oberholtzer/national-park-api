@@ -1,33 +1,96 @@
 import { useState } from "react";
 import { stateCodes } from "../stateCodes";
 import { useNavigate } from "react-router-dom";
+import { Avatar, Button, CssBaseline, Link, Paper, Box, Grid, Typography, Select, MenuItem, FormControl } from "@mui/material";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import LandscapeIcon from '@mui/icons-material/Landscape';
 
-function PickState () {
-    const [selectedState, setSelectedState] = useState<string>("AL")
-    const navigate = useNavigate();
+function Copyright(props) {
     return (
-        <>
-        <p>Choose a state to find National Parks near you.</p>
-        <form onSubmit={(e) => {
-            e.preventDefault();
-            navigate(`/state/${selectedState}`)
-        }}>
-            <select
-                id="states"
-                onChange={(e) => setSelectedState(e.currentTarget.value)}>
-                {Object.keys(stateCodes).map(key => {
-                    return (
-                        <option value={key} key={key}>{stateCodes[key]}</option>
-                    )
-                })}
-            </select>
-            <button
-                type="submit"
-                >Let's go!</button>
-        </form>
-        <hr />
-        </>
-    )
+        <Typography variant="body2" color="text.secondary" align="center" {...props}>
+            {'Copyright © '}
+            <Link color="inherit" href="https://www.epicodus.com/">
+                ParkPlanner LLC
+            </Link>{' '}
+            {new Date().getFullYear()}
+            {'.'}
+        </Typography>
+    );
+}
+const defaultTheme = createTheme();
+
+function PickState() {
+    const [selectedState, setSelectedState] = useState("OR")
+    const navigate = useNavigate();
+
+    function handleChange(e) {
+        setSelectedState(e.target.value);
+    }
+
+    return (
+        <ThemeProvider theme={defaultTheme}>
+            <Grid container component="main" sx={{ height: '100vh' }}>
+                <CssBaseline />
+                <Grid
+                    item
+                    xs={false}
+                    sm={4}
+                    md={7}
+                    sx={{
+                        backgroundImage: 'url(https://source.unsplash.com/random?wallpapers)',
+                        backgroundRepeat: 'no-repeat',
+                        backgroundColor: (t) =>
+                            t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                    }}
+                />
+                <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+                    <Box
+                        sx={{
+                            my: 8,
+                            mx: 4,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                        }}
+                    >
+                        <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+                            <LandscapeIcon />
+                        </Avatar>
+                        <Typography component="h1" variant="h5">
+                            Choose a state to find National Parks near you.
+                        </Typography>
+                        <FormControl component="form" noValidate
+                            onSubmit={(e) => {
+                                e.preventDefault();
+                                navigate(`/state/${selectedState}`)
+                            }}
+                        >
+                            <Select
+                                sx={{
+                                    marginTop: 5,
+                                    width: 250,
+                                    height: 50,
+                                }}
+                                id="states"
+                                value={selectedState}
+                                onChange={handleChange}
+                            >
+                                {Object.keys(stateCodes).map(key => {
+                                    return (
+                                        <MenuItem value={key} key={key}>{stateCodes[key]}</MenuItem>
+                                    )
+                                })}
+                            </Select>
+                            <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>Let's go!</Button>
+                            <Copyright sx={{ mt: 5 }} />
+                        </FormControl>
+                    </Box>
+                </Grid>
+            </Grid>
+        </ThemeProvider >
+    );
 }
 
 export default PickState;

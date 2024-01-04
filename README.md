@@ -6,20 +6,14 @@ _A pair project for Epicodus using React, Vite, Typescript, API calls_
 
 ![component diagram](src/assets/component.diagram.drawio.svg)
 
-* Notes for development
-
-Goal:
+Goals for development:
 * link to book campground (automate?)
-
-* if user chooses activity/park, saved to local storage (eventually database) - user dashboard
-
+* if user chooses activity/park/camp, saved to local storage (eventually database?) - Itinerary component
 * add webcam call?
-
 * change Sorry msg if no campground or things to do to stay on ParkOptions page and display msg instead of routing to things or campground component with msg there. (button lives in Park.tsx)
 * low priority, remove campground button from sites without campgrounds.
 
 Components:
-
 ```
 App
 ├── Header
