@@ -1,9 +1,23 @@
-function Header () {
-    return(
+import { Box, Typography, Button } from '@mui/material';
+import SendIcon from '@mui/icons-material/Send';
+import canyon from './../assets/images/canyon.jpg';
+
+function Header() {
+    return (
         <>
-        <h1>National Park Party</h1>
-        <p>Come curate your curiosity...</p>
-        <hr />
+            <Box sx={{
+                height: '15rem',
+                backgroundImage: `url(${canyon})`,
+                backgroundRepeat: "no-repeat",
+                opacity: "20",
+                backgroundSize: "cover",
+                textAlign: 'center',
+                color: 'black',
+            }}>
+                <Typography variant="h2">National Park Party</Typography>
+                <Typography variant="h6">Come curate your curiosity...</Typography>
+            </Box>
+            <Button size="small" variant="contained" color="secondary" endIcon={<SendIcon />} sx={{ textAlign: 'right' }}>my itinerary</Button>
         </>
     )
 }

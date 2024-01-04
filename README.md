@@ -9,17 +9,16 @@ _A pair project for Epicodus using React, Vite, Typescript, API calls_
 * Notes for development
 
 Goal:
+* add map using lat/long of park or campground or ???
 
-/things to do: add funcitonality to button to add item to itinerary component
+* link to book campground (automate?)
 
-/campground API call (from park options comp. btn) to generate campground (maybe sort by size, amenity, etc)
-*link to book campground (automate?)
+* if user chooses activity/park, saved to local storage (eventually database) - user dashboard
 
-*if user chooses activity/park, saved to local storage (eventually database) - user dashboard
+* add webcam call?
 
-* add React Router to navigate from home page, parklist, campground, todolist, userdashboard (w saved stuff)
-
-?add webcam call?
+* change Sorry msg if no campground or things to do to stay on ParkOptions page and display msg instead of routing to things or campground component with msg there. (button lives in Park.tsx)
+* low priority, remove campground button from sites without campgrounds.
 
 Components:
 

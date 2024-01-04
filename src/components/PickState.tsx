@@ -2,7 +2,6 @@ import { useState } from "react";
 import { stateCodes } from "../stateCodes";
 import { useNavigate } from "react-router-dom";
 
-
 function PickState () {
     const [selectedState, setSelectedState] = useState<string>("AL")
     const navigate = useNavigate();
