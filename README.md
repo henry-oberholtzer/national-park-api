@@ -9,8 +9,6 @@ _A pair project for Epicodus using React, Vite, Typescript, API calls_
 * Notes for development
 
 Goal:
-* add map using lat/long of park or campground or ???
-
 * link to book campground (automate?)
 
 * if user chooses activity/park, saved to local storage (eventually database) - user dashboard

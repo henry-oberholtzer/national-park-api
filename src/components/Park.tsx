@@ -20,7 +20,7 @@ const Park = (props: ParkProps) => {
     const position = latLng(latitude, longitude)
 
     return (
-        <Card variant="outlined" sx={{ maxWidth: 400, m: '1rem' }} key={index}>
+        <Card variant="outlined" sx={{ maxWidth: 400, m: '1rem', height: 'auto' }} key={index}>
             {park.images.length !== 0 ?
             <CardMedia 
                 sx={{ height: 140 }}
@@ -28,20 +28,21 @@ const Park = (props: ParkProps) => {
                 title={park.images[0].altText} 
             />
                 : ''}
-            <CardContent>
+            <CardContent 
+                style={{marginTop: 'auto' }}
+                sx={{ height: 200 }}>
                 <Typography gutterBottom variant="h5" component="div">
                 {park.fullName}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                     {park.description}
                 </Typography>
-                
             </CardContent>
             <CardActions>
                 <Button size="small" sx={{ color: 'success.main' }} onClick={() => nav(`/state/${stateCode}/park/${park.parkCode}/thingstodo`)}>Things to do</Button>
                 <Button size="small" sx={{ color: 'success.main' }} onClick={() => nav(`/state/${stateCode}/park/${park.parkCode}/campgrounds`)}>Find a campground</Button>
             </CardActions>
-            <div id="map">
+            {/* <div id="map"> */}
             <MapContainer  
                 center={position} 
                 zoom={11} 
@@ -57,7 +58,7 @@ const Park = (props: ParkProps) => {
                     </Popup>
                 </Marker>
             </MapContainer>
-            </div>
+            {/* </div> */}
         </Card>
     )
 }
