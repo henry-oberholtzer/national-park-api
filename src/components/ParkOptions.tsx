@@ -8,7 +8,6 @@ import { useParams } from "react-router-dom";
 function ParkOptions() {
     const parkList = useLoaderData() as parkArray;
     const { stateCode } = useParams();
-    // console.log(parkList);
     return (
             <>
             <p>Found {parkList.length} {parkList.length > 1 ? "results" : "result"} {stateCode ? `for ${stateCodes[stateCode]}` : "for this query"}</p>

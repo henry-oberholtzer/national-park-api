@@ -14,9 +14,12 @@ function Header() {
                 textAlign: 'center',
                 color: 'black',
             }}>
-                <Typography variant="h2">National Park Party</Typography>
-                <Typography variant="h6">Come curate your curiosity...</Typography>
-            </Box>
+                <Typography
+                    variant="h2" sx={{ p: 4}}>
+                            National Park Party
+                            </Typography>
+            <Typography variant="h6">Come curate your curiosity...</Typography>
+        </Box >
             <Button size="small" variant="contained" color="secondary" endIcon={<SendIcon />} sx={{ textAlign: 'right' }}>my itinerary</Button>
         </>
     )

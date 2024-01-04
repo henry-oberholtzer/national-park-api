@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route, RouterProvider, createBrowserRo
 import ThingsToDo from './ThingsToDo';
 import Campgrounds from './Campgrounds';
 import Itinerary from './Itinerary';
+import Footer from './Footer';
 
 const apiLoader = (apiEndpoint: string) => {
   return (searchCategory: string) => {
@@ -67,6 +68,7 @@ function App() {
     <>
       <Header />
       <RouterProvider router={router} />
+      <Footer />
     </>
   )
 }
